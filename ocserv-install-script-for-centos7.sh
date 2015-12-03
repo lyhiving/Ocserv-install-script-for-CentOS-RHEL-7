@@ -4,7 +4,7 @@
 # This is a ocserv installation for CentOS 7       #
 # Version: 1.2.5 20151009                          #
 # Author: Travis Lee                               #
-# Website: https://www.stunnel.info                #
+# Website: https://www.tedx.net                    #
 #                                                  #
 ####################################################
 
@@ -89,7 +89,7 @@ function ConfigEnvironmentVariable {
     fi
 
     #用户名，默认是user
-    username=user
+    username=uyun
     echo "Please input ocserv user name:"
     printf "Default user name is \e[33m${username}\e[0m, let it blank to use default user name: "
     read usernametmp
@@ -190,8 +190,8 @@ function ConfigOcserv {
         certtool --generate-privkey --outfile ca-key.pem
 
         cat << _EOF_ >ca.tmpl
-cn = "stunnel.info VPN"
-organization = "stunnel.info"
+cn = "tedx.net VPN"
+organization = "tedx.net"
 serial = 1
 expiration_days = 3650
 ca
@@ -205,7 +205,7 @@ _EOF_
         certtool --generate-privkey --outfile ${serverkey}
 
         cat << _EOF_ >server.tmpl
-cn = "stunnel.info VPN"
+cn = "tedx.net VPN"
 o = "stunnel"
 serial = 2
 expiration_days = 3650
